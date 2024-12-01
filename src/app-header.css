@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-bottom:1px solid;
+    box-shadow: 1px 1px 5px black;
+    font-size: 30px;
+    color: #848b99;
+    margin-bottom: 10px;
+    font-family: fantasy;
+    background-color: rgb(255, 255, 255);
+  }

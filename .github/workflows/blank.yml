@@ -1,0 +1,25 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main] # หรือ master หรือ branch หลักที่คุณใช้
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x' # หรือเวอร์ชัน Node.js ที่โปรเจกต์คุณใช้
+
+      - name: Install dependencies
+        run: npm install # หรือ yarn install (ถ้าคุณใช้ Yarn ให้เปลี่ยนเป็น 'yarn')
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build # โฟลเดอร์ที่ build project React ของคุณ
